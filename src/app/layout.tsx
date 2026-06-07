@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
+import { Golos_Text, Onest } from "next/font/google";
 import "./globals.scss";
+
+const golosText = Golos_Text({
+  subsets: ["cyrillic", "latin"],
+  variable: "--font-golos-text",
+  weight: ["400", "500", "700", "800", "900"],
+});
+
+const onest = Onest({
+  subsets: ["cyrillic", "latin"],
+  variable: "--font-onest",
+  weight: ["400", "500", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Соседи — шеринг вещей в вашем районе",
@@ -19,7 +32,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={`${golosText.variable} ${onest.variable}`}>
       <body>{children}</body>
     </html>
   );

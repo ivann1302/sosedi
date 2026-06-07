@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 const navLinks = [
-  { label: "О проекте", href: "#about" },
+  { label: "Как это работает", href: "#how-it-works" },
   { label: "Скачать приложение", href: "#download" },
+  { label: "FAQ", href: "#faq" },
   { label: "Для арендодателей", href: "#landlords" },
   { label: "Блог", href: "/blog" },
 ] as const;

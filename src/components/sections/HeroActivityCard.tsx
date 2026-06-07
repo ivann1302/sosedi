@@ -1,6 +1,9 @@
+import Image, { type StaticImageData } from "next/image";
+
 type HeroActivityCardProps = {
   action: string;
-  icon: string;
+  image: StaticImageData;
+  imageAlt: string;
   position: "top" | "right" | "bottom";
   title: string;
   time: string;
@@ -8,14 +11,22 @@ type HeroActivityCardProps = {
 
 export function HeroActivityCard({
   action,
-  icon,
+  image,
+  imageAlt,
   position,
   title,
   time,
 }: HeroActivityCardProps) {
   return (
     <div className={`hero-card hero-card--${position}`}>
-      <span className="hero-card__icon">{icon}</span>
+      <span className="hero-card__image-wrap">
+        <Image
+          src={image}
+          alt={imageAlt}
+          sizes="42px"
+          className="hero-card__image"
+        />
+      </span>
       <span>
         <strong>{title}</strong>
         {action}

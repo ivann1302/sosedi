@@ -1,14 +1,29 @@
 import Link from "next/link";
 
-const navLinks = [
+type HeaderNavLink = {
+  label: string;
+  href: string;
+};
+
+type HeaderProps = {
+  navLinks?: readonly HeaderNavLink[];
+  ctaHref?: string;
+  ctaLabel?: string;
+};
+
+const defaultNavLinks = [
   { label: "Как это работает", href: "#how-it-works" },
   { label: "Скачать приложение", href: "#download" },
   { label: "FAQ", href: "#faq" },
-  { label: "Для арендодателей", href: "#landlords" },
+  { label: "Для бизнеса", href: "/business" },
   { label: "Блог", href: "/blog" },
 ] as const;
 
-export function Header() {
+export function Header({
+  navLinks = defaultNavLinks,
+  ctaHref = "#download",
+  ctaLabel = "Скачать приложение",
+}: HeaderProps) {
   return (
     <header className="site-header">
       <div className="site-header__inner">
@@ -32,8 +47,8 @@ export function Header() {
           ))}
         </nav>
 
-        <Link className="site-header__cta site-header__cta--desktop" href="#download">
-          Скачать приложение
+        <Link className="site-header__cta site-header__cta--desktop" href={ctaHref}>
+          {ctaLabel}
         </Link>
 
         <div className="site-header__mobile-menu">
@@ -60,8 +75,8 @@ export function Header() {
               ))}
             </nav>
 
-            <Link className="site-header__cta site-header__cta--menu" href="#download">
-              Скачать приложение
+            <Link className="site-header__cta site-header__cta--menu" href={ctaHref}>
+              {ctaLabel}
             </Link>
           </div>
         </div>

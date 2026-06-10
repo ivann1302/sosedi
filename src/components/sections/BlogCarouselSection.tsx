@@ -4,10 +4,7 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import type { WheelEvent } from "react";
 import { useRef } from "react";
-import blogFirstImage from "@/assets/images/blog/blog1.webp";
-import blogSecondImage from "@/assets/images/blog/blog2.webp";
-import blogThirdImage from "@/assets/images/blog/blog3.webp";
-import blogFourthImage from "@/assets/images/blog/blog4.webp";
+import businessImage from "@/assets/images/business/business.webp";
 
 type BlogArticle = {
   title: string;
@@ -19,22 +16,22 @@ const blogArticles = [
   {
     title: "Какие вещи выгоднее брать у соседей, а не покупать",
     href: "/blog/chto-brat-u-sosedey",
-    image: blogFirstImage,
+    image: businessImage,
   },
   {
     title: "Как подготовить вещь к первой сдаче в аренду",
     href: "/blog/podgotovit-vesch-k-arende",
-    image: blogSecondImage,
+    image: businessImage,
   },
   {
     title: "Идеи для выходных: что можно найти рядом с домом",
     href: "/blog/idei-dlya-vyhodnyh",
-    image: blogThirdImage,
+    image: businessImage,
   },
   {
     title: "Почему локальный шеринг помогает экономить место дома",
     href: "/blog/lokalnyy-shering",
-    image: blogFourthImage,
+    image: businessImage,
   },
 ] as const satisfies readonly BlogArticle[];
 

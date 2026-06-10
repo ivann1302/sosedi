@@ -1,19 +1,7 @@
-import { ButtonLink } from "@/components/ui/ButtonLink";
-
-const businessTerms = [
-  {
-    title: "Быстрый старт",
-    text: "Подключим точку, добавим карточку бизнеса и поможем оформить первые предложения для жителей района.",
-  },
-  {
-    title: "Локальные заявки",
-    text: "Показываем услуги и товары людям рядом, чтобы бизнес получал обращения без лишнего рекламного шума.",
-  },
-  {
-    title: "Прозрачные условия",
-    text: "Без сложной интеграции и долгих договоров. Можно начать с базового размещения и расширять формат позже.",
-  },
-] as const;
+import Image from "next/image";
+import Link from "next/link";
+import businessImage from "@/assets/images/business/business.webp";
+import { BusinessTermsStats } from "@/components/sections/BusinessTermsStats";
 
 export function BusinessTermsSection() {
   return (
@@ -24,29 +12,47 @@ export function BusinessTermsSection() {
     >
       <div className="business-terms__inner">
         <div className="business-terms__content">
-          <p className="business-terms__eyebrow">Для бизнеса</p>
+          <p className="business-terms__eyebrow">
+            <span className="business-terms__eyebrow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path
+                  d="M7 8V6.5A2.5 2.5 0 0 1 9.5 4h5A2.5 2.5 0 0 1 17 6.5V8m-12 3h14m-8 0v2h4v-2M5.5 20h13A1.5 1.5 0 0 0 20 18.5v-10A1.5 1.5 0 0 0 18.5 7h-13A1.5 1.5 0 0 0 4 8.5v10A1.5 1.5 0 0 0 5.5 20Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                />
+              </svg>
+            </span>
+            Для бизнеса
+          </p>
           <h2 id="business-terms-title">
-            Выгодные условия подключения для локальных компаний
+            Размещайте вещи на нашей платформе и находите{" "}
+            <span>новых клиентов</span>
           </h2>
           <p className="business-terms__text">
-            Sosedi помогает сервисам, прокатам и магазинам быть заметнее для
-            людей рядом с домом.
+            Тысячи людей рядом ищут вещи каждый день. Ваши товары и услуги
+            могут быть у них в руках.
           </p>
-          <ButtonLink href="#download" variant="secondary">
-            Обсудить подключение
+          <Link className="business-terms__link" href="/business">
+            Узнать больше для бизнеса
             <span aria-hidden="true">→</span>
-          </ButtonLink>
+          </Link>
         </div>
 
-        <ul className="business-terms__list">
-          {businessTerms.map((term) => (
-            <li className="business-terms__item" key={term.title}>
-              <span className="business-terms__marker" aria-hidden="true" />
-              <h3>{term.title}</h3>
-              <p>{term.text}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="business-terms__visual" aria-hidden="true">
+          <div className="business-terms__image-card">
+            <Image
+              src={businessImage}
+              alt=""
+              sizes="(max-width: 760px) 100vw, 680px"
+              className="business-terms__image"
+            />
+          </div>
+
+          <BusinessTermsStats />
+        </div>
       </div>
     </section>
   );

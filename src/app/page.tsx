@@ -9,6 +9,7 @@ import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { MapSection } from "@/components/sections/MapSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { ThingsAroundSection } from "@/components/sections/ThingsAroundSection";
+import { TrustSection } from "@/components/sections/TrustSection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <StatsSection />
         <ThingsAroundSection />
         <HowItWorksSection />
+        <TrustSection />
         <section className="app-thesis" aria-label="Ключевое преимущество">
           <p>
             <span>В одном приложении</span>

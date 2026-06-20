@@ -29,7 +29,7 @@ const mapUpdates = [
 export function MapSection() {
   return (
     <section className="district-map" aria-labelledby="district-map-title">
-      <div className="district-map__inner">
+      <div className="district-map__inner" data-reveal="scale">
         <div className="district-map__content">
           <p className="district-map__eyebrow">Прямо сейчас в вашем районе</p>
           <h2 id="district-map-title">
@@ -50,9 +50,11 @@ export function MapSection() {
           />
 
           <ul className="district-map__updates">
-            {mapUpdates.map((update) => (
+            {mapUpdates.map((update, index) => (
               <li
                 className={`district-map__update district-map__update--${update.position}`}
+                data-reveal="soft"
+                data-reveal-delay={String(index + 2)}
                 key={update.text}
               >
                 <span

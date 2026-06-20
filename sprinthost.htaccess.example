@@ -1,0 +1,5 @@
+PassengerEnabled on
+PassengerAppType node
+PassengerAppRoot /home/LOGIN/sosedi-app
+PassengerStartupFile server.js
+PassengerAppEnv production

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Golos_Text, Onest } from "next/font/google";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import "./globals.scss";
 
 const golosText = Golos_Text({
@@ -33,7 +34,10 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ru" className={`${golosText.variable} ${onest.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ScrollReveal />
+        {children}
+      </body>
     </html>
   );
 }

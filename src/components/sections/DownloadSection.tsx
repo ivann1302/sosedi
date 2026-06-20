@@ -9,7 +9,7 @@ export function DownloadSection() {
           <DownloadPhone />
         </div>
 
-        <div className="download-app__content">
+        <div className="download-app__content" data-reveal="right">
           <p className="download-app__eyebrow">Приложение Sosedi</p>
           <h2 id="download-title">Скачайте и найдите нужное рядом</h2>
           <p className="download-app__text">

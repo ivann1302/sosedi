@@ -302,7 +302,7 @@ export default function BusinessPage() {
           aria-labelledby="business-page-hero-title"
         >
           <div className="business-page-hero__inner">
-            <div className="business-page-hero__content">
+            <div className="business-page-hero__content" data-reveal="left">
               <p className="business-page__badge">
                 <span aria-hidden="true">
                   <BusinessPageIcon name="briefcase" />
@@ -331,7 +331,11 @@ export default function BusinessPage() {
               </div>
             </div>
 
-            <div className="business-page-hero__visual" aria-hidden="true">
+            <div
+              className="business-page-hero__visual"
+              data-reveal="right"
+              aria-hidden="true"
+            >
               <div className="business-page-hero__shape" />
               <div className="business-page-hero__photo-slot">
                 <Image
@@ -346,7 +350,11 @@ export default function BusinessPage() {
           </div>
         </section>
 
-        <section className="business-page-stats" aria-labelledby="business-page-stats-title">
+        <section
+          className="business-page-stats"
+          data-reveal="scale"
+          aria-labelledby="business-page-stats-title"
+        >
           <div className="business-page-stats__inner">
             <div className="business-page-stats__intro">
               <h2 id="business-page-stats-title">
@@ -362,8 +370,13 @@ export default function BusinessPage() {
               </Link>
             </div>
             <dl className="business-page-stats__list">
-              {businessStats.map((stat) => (
-                <div className="business-page-stats__item" key={stat.label}>
+              {businessStats.map((stat, index) => (
+                <div
+                  className="business-page-stats__item"
+                  data-reveal="soft"
+                  data-reveal-delay={String(index + 1)}
+                  key={stat.label}
+                >
                   <dt>{stat.value}</dt>
                   <dd>{stat.label}</dd>
                 </div>
@@ -377,15 +390,20 @@ export default function BusinessPage() {
           id="business-benefits"
           aria-labelledby="business-page-benefits-title"
         >
-          <div className="business-page__section-head">
+          <div className="business-page__section-head" data-reveal="left">
             <p className="business-page__eyebrow">Преимущества</p>
             <h2 id="business-page-benefits-title">
               Что получает локальный бизнес
             </h2>
           </div>
           <div className="business-page-benefits__grid">
-            {businessBenefits.map((benefit) => (
-              <article className="business-page-benefits__card" key={benefit.title}>
+            {businessBenefits.map((benefit, index) => (
+              <article
+                className="business-page-benefits__card"
+                data-reveal="soft"
+                data-reveal-delay={String(index + 1)}
+                key={benefit.title}
+              >
                 <span className="business-page-benefits__icon" aria-hidden="true">
                   <BusinessPageIcon name={benefit.icon} />
                 </span>
@@ -401,7 +419,7 @@ export default function BusinessPage() {
           id="business-process"
           aria-labelledby="business-page-process-title"
         >
-          <div className="business-page-process__head">
+          <div className="business-page-process__head" data-reveal="left">
             <div>
               <p className="business-page__eyebrow">Как это работает</p>
               <h2 id="business-page-process-title">
@@ -415,7 +433,12 @@ export default function BusinessPage() {
           </div>
           <ol className="business-page-process__list">
             {businessSteps.map((step, index) => (
-              <li className="business-page-process__item" key={step.title}>
+              <li
+                className="business-page-process__item"
+                data-reveal="soft"
+                data-reveal-delay={String(index + 1)}
+                key={step.title}
+              >
                 <span className="business-page-process__icon" aria-hidden="true">
                   <BusinessPageIcon name={step.icon} />
                 </span>
@@ -429,8 +452,12 @@ export default function BusinessPage() {
           </ol>
         </section>
 
-        <section className="business-page-action" aria-labelledby="business-page-action-title">
-          <div className="business-page-action__content">
+        <section
+          className="business-page-action"
+          data-reveal="scale"
+          aria-labelledby="business-page-action-title"
+        >
+          <div className="business-page-action__content" data-reveal="left">
             <h2 id="business-page-action-title">
               Ваши товары увидят люди рядом
             </h2>
@@ -449,13 +476,16 @@ export default function BusinessPage() {
           className="business-page-product"
           aria-labelledby="business-page-product-title"
         >
-          <div className="business-page__section-head business-page__section-head--center">
+          <div
+            className="business-page__section-head business-page__section-head--center"
+            data-reveal="scale"
+          >
             <p className="business-page__eyebrow">Интерфейс приложения</p>
             <h2 id="business-page-product-title">
               Всё важное видно в одном экране
             </h2>
           </div>
-          <div className="business-page-product__stage">
+          <div className="business-page-product__stage" data-reveal="soft">
             <div className="business-page-product__phone" aria-hidden="true">
               <div className="business-page-product__phone-top" />
               <div className="business-page-product__screen">
@@ -473,8 +503,13 @@ export default function BusinessPage() {
               </div>
             </div>
             <ul className="business-page-product__cards">
-              {interfaceCards.map((card) => (
-                <li className="business-page-product__card" key={card.title}>
+              {interfaceCards.map((card, index) => (
+                <li
+                  className="business-page-product__card"
+                  data-reveal="soft"
+                  data-reveal-delay={String(index + 1)}
+                  key={card.title}
+                >
                   <strong>{card.title}</strong>
                   <span>{card.text}</span>
                 </li>
@@ -488,7 +523,7 @@ export default function BusinessPage() {
           id="business-faq"
           aria-labelledby="business-page-faq-title"
         >
-          <div className="business-page-faq__intro">
+          <div className="business-page-faq__intro" data-reveal="left">
             <p className="business-page__eyebrow">FAQ</p>
             <h2 id="business-page-faq-title">
               Частые вопросы бизнеса
@@ -498,9 +533,14 @@ export default function BusinessPage() {
               платформе.
             </p>
           </div>
-          <div className="business-page-faq__list">
-            {businessFaq.map((item) => (
-              <details className="business-page-faq__item" key={item.question}>
+          <div className="business-page-faq__list" data-reveal="right">
+            {businessFaq.map((item, index) => (
+              <details
+                className="business-page-faq__item"
+                data-reveal="soft"
+                data-reveal-delay={String(index + 1)}
+                key={item.question}
+              >
                 <summary>{item.question}</summary>
                 <p>{item.answer}</p>
               </details>
@@ -511,6 +551,7 @@ export default function BusinessPage() {
         <section
           className="business-page-final"
           id="business-final-cta"
+          data-reveal="scale"
           aria-labelledby="business-page-final-title"
         >
           <p className="business-page__eyebrow">Старт для бизнеса</p>

@@ -23,7 +23,7 @@ export default function Home() {
         <HowItWorksSection />
         <TrustSection />
         <section className="app-thesis" aria-label="Ключевое преимущество">
-          <p>
+          <p data-reveal="scale">
             <span>В одном приложении</span>
             <span>в несколько кликов</span>
           </p>

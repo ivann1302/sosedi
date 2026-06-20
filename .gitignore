@@ -1,6 +1,10 @@
 .next/
 node_modules/
 out/
+.deploy/
+*.tar.gz
+SERVER_TECH_NOTES.local.md
+PROJECT42_DEPLOY_PROMPT.local.md
 
 .env*
 !.env.example

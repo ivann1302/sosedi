@@ -11,7 +11,7 @@ export function BusinessTermsSection() {
       aria-labelledby="business-terms-title"
     >
       <div className="business-terms__inner">
-        <div className="business-terms__content">
+        <div className="business-terms__content" data-reveal="left">
           <p className="business-terms__eyebrow">
             <span className="business-terms__eyebrow-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
@@ -42,7 +42,7 @@ export function BusinessTermsSection() {
         </div>
 
         <div className="business-terms__visual" aria-hidden="true">
-          <div className="business-terms__image-card">
+          <div className="business-terms__image-card" data-reveal="right">
             <Image
               src={businessImage}
               alt=""

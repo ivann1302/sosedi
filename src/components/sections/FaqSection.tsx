@@ -30,7 +30,7 @@ export function FaqSection() {
   return (
     <section className="faq" id="faq" aria-labelledby="faq-title">
       <div className="faq__inner">
-        <div className="faq__intro">
+        <div className="faq__intro" data-reveal="left">
           <p className="faq__eyebrow">FAQ</p>
           <h2 id="faq-title">Частые вопросы о Sosedi</h2>
           <p>
@@ -39,9 +39,14 @@ export function FaqSection() {
           </p>
         </div>
 
-        <div className="faq__list">
-          {faqItems.map((item) => (
-            <details className="faq__item" key={item.question}>
+        <div className="faq__list" data-reveal="right">
+          {faqItems.map((item, index) => (
+            <details
+              className="faq__item"
+              data-reveal="soft"
+              data-reveal-delay={String(index + 1)}
+              key={item.question}
+            >
               <summary>{item.question}</summary>
               <p>{item.answer}</p>
             </details>

@@ -34,7 +34,7 @@ export function TrustSection() {
   return (
     <section className="trust" aria-labelledby="trust-title">
       <div className="trust__inner">
-        <div className="trust__intro">
+        <div className="trust__intro" data-reveal="left">
           <p className="trust__eyebrow">Доверие</p>
           <h2 id="trust-title">Делиться вещами проще, когда всё прозрачно</h2>
           <p>
@@ -44,8 +44,13 @@ export function TrustSection() {
         </div>
 
         <ul className="trust__list" aria-label="Что помогает доверять сделке">
-          {trustItems.map((item) => (
-            <li className="trust__item" key={item.title}>
+          {trustItems.map((item, index) => (
+            <li
+              className="trust__item"
+              data-reveal="soft"
+              data-reveal-delay={String(index + 1)}
+              key={item.title}
+            >
               <span className="trust__icon" aria-hidden="true" />
               <h3>{item.title}</h3>
               <p>{item.text}</p>
@@ -54,8 +59,13 @@ export function TrustSection() {
         </ul>
 
         <div className="trust__roles" aria-label="Роли пользователей Sosedi">
-          {roles.map((role) => (
-            <article className="trust__role" key={role.title}>
+          {roles.map((role, index) => (
+            <article
+              className="trust__role"
+              data-reveal="soft"
+              data-reveal-delay={String(index + 2)}
+              key={role.title}
+            >
               <h3>{role.title}</h3>
               <p>{role.text}</p>
               <Link href={role.href}>{role.linkText}</Link>

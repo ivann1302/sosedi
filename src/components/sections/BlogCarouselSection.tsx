@@ -87,7 +87,7 @@ export function BlogCarouselSection() {
       aria-labelledby="blog-carousel-title"
     >
       <div className="blog-carousel__inner">
-        <div className="blog-carousel__intro">
+        <div className="blog-carousel__intro" data-reveal="left">
           <p className="blog-carousel__eyebrow">Блог</p>
           <h2 id="blog-carousel-title">Полезные статьи от наших авторов</h2>
         </div>
@@ -106,8 +106,13 @@ export function BlogCarouselSection() {
             onWheel={handleWheel}
           >
             <ul className="blog-carousel__list">
-              {blogArticles.map((article) => (
-                <li className="blog-carousel__item" key={article.href}>
+              {blogArticles.map((article, index) => (
+                <li
+                  className="blog-carousel__item"
+                  data-reveal="soft"
+                  data-reveal-delay={String(index + 1)}
+                  key={article.href}
+                >
                   <Link className="blog-carousel__card" href={article.href}>
                     <span className="blog-carousel__image-wrap">
                       <Image
@@ -138,7 +143,7 @@ export function BlogCarouselSection() {
           <span />
         </div>
 
-        <Link className="blog-carousel__link" href="/blog">
+        <Link className="blog-carousel__link" data-reveal="soft" href="/blog">
           Перейти в блог
         </Link>
       </div>

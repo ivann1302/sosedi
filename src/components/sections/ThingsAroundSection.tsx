@@ -75,6 +75,7 @@ export function ThingsAroundSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
+  const [isHeroVisible, setIsHeroVisible] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -129,7 +130,9 @@ export function ThingsAroundSection() {
       },
     );
     const footer = document.querySelector<HTMLElement>(".site-footer");
+    const hero = document.querySelector<HTMLElement>(".hero");
     let footerObserver: IntersectionObserver | null = null;
+    let heroObserver: IntersectionObserver | null = null;
 
     if (footer) {
       footerObserver = new IntersectionObserver(
@@ -144,6 +147,18 @@ export function ThingsAroundSection() {
       footerObserver.observe(footer);
     }
 
+    if (hero) {
+      heroObserver = new IntersectionObserver(
+        ([entry]) => {
+          setIsHeroVisible(Boolean(entry?.isIntersecting));
+        },
+        {
+          threshold: 0.08,
+        },
+      );
+      heroObserver.observe(hero);
+    }
+
     observer.observe(section);
     window.addEventListener("scroll", requestScrollFlyUpdate, { passive: true });
     window.addEventListener("resize", requestScrollFlyUpdate);
@@ -151,6 +166,7 @@ export function ThingsAroundSection() {
     return () => {
       observer.disconnect();
       footerObserver?.disconnect();
+      heroObserver?.disconnect();
       window.cancelAnimationFrame(frameId);
       window.removeEventListener("scroll", requestScrollFlyUpdate);
       window.removeEventListener("resize", requestScrollFlyUpdate);
@@ -200,7 +216,7 @@ export function ThingsAroundSection() {
       <Link
         className={`things-around__mobile-cta${
           isFooterVisible ? " things-around__mobile-cta--footer" : ""
-        }`}
+        }${isHeroVisible ? " things-around__mobile-cta--hidden" : ""}`}
         href="#download"
       >
         Скачать приложение

@@ -1,5 +1,4 @@
 import { Header } from "@/components/sections/Header";
-import { BlogCarouselSection } from "@/components/sections/BlogCarouselSection";
 import { BusinessTermsSection } from "@/components/sections/BusinessTermsSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { DownloadSection } from "@/components/sections/DownloadSection";
@@ -40,7 +39,6 @@ export default function Home() {
         <MapSection />
         <DownloadSection />
         <BusinessTermsSection />
-        <BlogCarouselSection />
         <FaqSection />
       </main>
 

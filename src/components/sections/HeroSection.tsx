@@ -1,82 +1,53 @@
 import Image from "next/image";
-import heroHomeImage from "@/assets/hero-home.webp";
-import bicycleImage from "@/assets/images/things-around/bycicle.webp";
-import drillImage from "@/assets/images/things-around/drel.webp";
-import projectorImage from "@/assets/images/things-around/proector.webp";
+import heroImage from "@/assets/images/brand/hero-neighbor-v2.webp";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { AppStoreButtons } from "@/components/ui/AppStoreButtons";
-import { HeroActivityCard } from "@/components/sections/HeroActivityCard";
-
-const heroActivities = [
-  {
-    action: "Передал дрель",
-    image: drillImage,
-    imageAlt: "Дрель",
-    position: "top",
-    title: "Квартира 27",
-    time: "5 минут назад",
-  },
-  {
-    action: "Взяли велосипед",
-    image: bicycleImage,
-    imageAlt: "Велосипед",
-    position: "right",
-    title: "Квартира 58",
-    time: "20 минут назад",
-  },
-  {
-    action: "Сдали проектор",
-    image: projectorImage,
-    imageAlt: "Проектор",
-    position: "bottom",
-    title: "Квартира 114",
-    time: "1 час назад",
-  },
-] as const;
 
 export function HeroSection() {
   return (
     <section className="hero" id="about" aria-labelledby="home-title">
-      <div className="hero__image-wrap" aria-hidden="true">
-        <Image
-          src={heroHomeImage}
-          alt=""
-          priority
-          sizes="(max-width: 560px) 86vw, (max-width: 920px) 77vw, 75vw"
-          className="hero__image"
-        />
-      </div>
-
-      <div className="hero__inner">
+      <div className="container hero__inner">
         <div className="hero__content">
-          <p className="hero__eyebrow">Шеринг вещей в вашем районе</p>
-          <h1 id="home-title">
-            <span className="hero__title-main">Всё нужное уже есть</span>
-            <span className="hero__title-accent">рядом с вами</span>
-          </h1>
-          <p className="hero__text">
-            Берите вещи у соседей, экономьте бюджет и живите в стиле
-            осознанного потребления.
+          <p className="eyebrow">
+            <span className="status-dot" />
+            Арендуй. Делись. Используй.
           </p>
-          <div className="hero__actions">
-            <ButtonLink href="#download">Скачать приложение</ButtonLink>
-            <ButtonLink href="#how-it-works" variant="secondary">
-              Как это работает
+          <h1 id="home-title">
+            Всё, что
+            <br />
+            нужно,
+            <br />
+            <span className="hero__highlight">рядом.</span>
+          </h1>
+          <p className="lead">
+            Вещи для больших планов и маленьких дел. Бери у соседей то, что
+            понадобится всего пару раз.
+          </p>
+          <div className="actions">
+            <ButtonLink href="#how-it-works">
+              Как это работает <span aria-hidden="true">↗</span>
+            </ButtonLink>
+            <ButtonLink href="#download" variant="secondary">
+              О запуске
             </ButtonLink>
           </div>
-          <div
-            className="hero__stores"
-            aria-label="Ссылки для скачивания приложения"
-          >
-            <AppStoreButtons />
-          </div>
+          <p className="hero__note">Меньше покупок. Больше возможностей.</p>
         </div>
-
-        <div className="hero__visual" aria-hidden="true">
-          {heroActivities.map((activity) => (
-            <HeroActivityCard key={activity.title} {...activity} />
-          ))}
-        </div>
+        <figure className="hero__visual">
+          <Image
+            src={heroImage}
+            alt="Женщина с жёлтой сумкой и складным стулом во дворе жилого дома"
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+          <figcaption className="handwritten">
+            Хорошие вещи
+            <br />
+            объединяют людей
+          </figcaption>
+          <svg className="hero__rays" viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M21 50 6 37M46 28 41 5M70 37 85 15" />
+          </svg>
+        </figure>
       </div>
     </section>
   );

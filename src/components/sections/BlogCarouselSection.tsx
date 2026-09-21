@@ -1,151 +1,64 @@
-"use client";
+import Image from "next/image";
+import drillImage from "@/assets/images/things-around/drel.webp";
+import tentImage from "@/assets/images/things-around/tent.webp";
+import bicycleImage from "@/assets/images/things-around/bycicle.webp";
 
-import Image, { type StaticImageData } from "next/image";
-import Link from "next/link";
-import type { WheelEvent } from "react";
-import { useRef } from "react";
-import businessImage from "@/assets/images/business/business.webp";
-
-type BlogArticle = {
-  title: string;
-  href: string;
-  image: StaticImageData;
-};
-
-const blogArticles = [
+const tips = [
   {
-    title: "Какие вещи выгоднее брать у соседей, а не покупать",
-    href: "/blog/chto-brat-u-sosedey",
-    image: businessImage,
+    label: "Разумные покупки",
+    title: "Нужно один раз? Возьми на время.",
+    text: "Прежде чем покупать инструмент для одной задачи, подумай об аренде. Освободится и бюджет, и полка в шкафу.",
+    image: drillImage,
   },
   {
-    title: "Как подготовить вещь к первой сдаче в аренду",
-    href: "/blog/podgotovit-vesch-k-arende",
-    image: businessImage,
+    label: "Забота о вещах",
+    title: "Подготовь вещь к новой истории.",
+    text: "Проверь комплект, очисти вещь и расскажи владельцу или арендатору обо всех особенностях. Это делает встречу проще.",
+    image: bicycleImage,
   },
   {
-    title: "Идеи для выходных: что можно найти рядом с домом",
-    href: "/blog/idei-dlya-vyhodnyh",
-    image: businessImage,
+    label: "Идеи для выходных",
+    title: "Приключения без лишнего багажа.",
+    text: "Палатка, складной стул и термос — составь список для короткой поездки. Необязательно покупать всё сразу.",
+    image: tentImage,
   },
-  {
-    title: "Почему локальный шеринг помогает экономить место дома",
-    href: "/blog/lokalnyy-shering",
-    image: businessImage,
-  },
-] as const satisfies readonly BlogArticle[];
+];
 
 export function BlogCarouselSection() {
-  const viewportRef = useRef<HTMLDivElement>(null);
-
-  const scrollByArticle = (direction: -1 | 1) => {
-    const viewport = viewportRef.current;
-
-    if (!viewport) {
-      return;
-    }
-
-    const firstItem = viewport.querySelector<HTMLElement>(
-      ".blog-carousel__item",
-    );
-    const scrollStep = firstItem?.offsetWidth ?? viewport.clientWidth;
-
-    viewport.scrollBy({
-      left: direction * scrollStep,
-      behavior: "smooth",
-    });
-  };
-
-  const handleWheel = (event: WheelEvent<HTMLDivElement>) => {
-    if (window.matchMedia("(max-width: 680px)").matches) {
-      return;
-    }
-
-    const viewport = viewportRef.current;
-
-    if (!viewport) {
-      return;
-    }
-
-    const scrollDelta =
-      Math.abs(event.deltaX) > Math.abs(event.deltaY)
-        ? event.deltaX
-        : event.deltaY;
-
-    if (Math.abs(scrollDelta) < 2) {
-      return;
-    }
-
-    event.preventDefault();
-    viewport.scrollBy({ left: scrollDelta, behavior: "auto" });
-  };
-
   return (
     <section
-      className="blog-carousel"
+      className="section journal"
       id="blog-preview"
-      aria-labelledby="blog-carousel-title"
+      aria-labelledby="journal-title"
     >
-      <div className="blog-carousel__inner">
-        <div className="blog-carousel__intro" data-reveal="left">
-          <p className="blog-carousel__eyebrow">Блог</p>
-          <h2 id="blog-carousel-title">Полезные статьи от наших авторов</h2>
+      <div className="container">
+        <div className="section-heading">
+          <h2 id="journal-title">
+            Хорошие идеи
+            <br />
+            тоже рядом.
+          </h2>
+          <p>
+            О вещах, заботе
+            <br />и маленьких открытиях.
+          </p>
         </div>
-
-        <div className="blog-carousel__stage">
-          <button
-            className="blog-carousel__arrow blog-carousel__arrow--previous"
-            type="button"
-            onClick={() => scrollByArticle(-1)}
-            aria-label="Предыдущие статьи"
-          />
-
-          <div
-            className="blog-carousel__viewport"
-            ref={viewportRef}
-            onWheel={handleWheel}
-          >
-            <ul className="blog-carousel__list">
-              {blogArticles.map((article, index) => (
-                <li
-                  className="blog-carousel__item"
-                  data-reveal="soft"
-                  data-reveal-delay={String(index + 1)}
-                  key={article.href}
-                >
-                  <Link className="blog-carousel__card" href={article.href}>
-                    <span className="blog-carousel__image-wrap">
-                      <Image
-                        src={article.image}
-                        alt=""
-                        sizes="(max-width: 560px) calc(100vw - 72px), (max-width: 680px) 340px, 360px"
-                        className="blog-carousel__image"
-                      />
-                    </span>
-                    <span className="blog-carousel__title">
-                      {article.title}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <button
-            className="blog-carousel__arrow blog-carousel__arrow--next"
-            type="button"
-            onClick={() => scrollByArticle(1)}
-            aria-label="Следующие статьи"
-          />
+        <div className="journal__grid">
+          {tips.map((tip) => (
+            <article className="journal__article" key={tip.title}>
+              <div className="journal__image">
+                <Image
+                  src={tip.image}
+                  alt=""
+                  sizes="(min-width: 1024px) 30vw, 100vw"
+                />
+              </div>
+              <p className="eyebrow">{tip.label}</p>
+              <h3>{tip.title}</h3>
+              <p>{tip.text}</p>
+            </article>
+          ))}
         </div>
-
-        <div className="blog-carousel__swipe-hint" aria-hidden="true">
-          <span />
-        </div>
-
-        <Link className="blog-carousel__link" data-reveal="soft" href="/blog">
-          Перейти в блог
-        </Link>
       </div>
     </section>
   );

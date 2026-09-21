@@ -16,17 +16,26 @@ export default function Home() {
     <div className="page">
       <Header />
 
-      <main>
+      <main id="main-content">
         <HeroSection />
         <StatsSection />
         <ThingsAroundSection />
         <HowItWorksSection />
         <TrustSection />
-        <section className="app-thesis" aria-label="Ключевое преимущество">
-          <p data-reveal="scale">
-            <span>В одном приложении</span>
-            <span>в несколько кликов</span>
-          </p>
+        <section
+          className="app-thesis"
+          aria-label="Идея совместного использования"
+        >
+          <div className="container">
+            <p>
+              Хорошие вещи
+              <br />
+              не должны <span>пылиться.</span>
+            </p>
+            <span className="handwritten">
+              Пусть у них будет больше историй.
+            </span>
+          </div>
         </section>
         <MapSection />
         <DownloadSection />

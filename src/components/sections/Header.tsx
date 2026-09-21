@@ -1,44 +1,40 @@
+import Image from "next/image";
 import Link from "next/link";
 
-type HeaderNavLink = {
-  label: string;
-  href: string;
-};
-
 type HeaderProps = {
-  navLinks?: readonly HeaderNavLink[];
+  navLinks?: readonly { label: string; href: string }[];
   ctaHref?: string;
   ctaLabel?: string;
 };
 
 const defaultNavLinks = [
-  { label: "Как это работает", href: "#how-it-works" },
-  { label: "Скачать приложение", href: "#download" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Что можно взять", href: "/#things" },
+  { label: "Как это работает", href: "/#how-it-works" },
   { label: "Для бизнеса", href: "/business" },
-  { label: "Блог", href: "/blog" },
-] as const;
+  { label: "FAQ", href: "/#faq" },
+];
 
 export function Header({
   navLinks = defaultNavLinks,
-  ctaHref = "#download",
-  ctaLabel = "Скачать приложение",
+  ctaHref = "/#download",
+  ctaLabel = "Скоро запуск",
 }: HeaderProps) {
   return (
     <header className="site-header">
-      <div className="site-header__inner">
-        <Link className="site-header__logo" href="/" aria-label="Соседи">
-          <span className="site-header__mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-              <path
-                d="M4.5 10.7 12 4.6l7.5 6.1v7.5a1.7 1.7 0 0 1-1.7 1.7h-3.4v-5.5H9.6v5.5H6.2a1.7 1.7 0 0 1-1.7-1.7v-7.5Z"
-                fill="currentColor"
-              />
-            </svg>
-          </span>
-          <span>Соседи</span>
+      <div className="container site-header__inner">
+        <Link
+          className="site-header__logo"
+          href="/"
+          aria-label="Всё рядом — главная"
+        >
+          <Image
+            src="/brand/logo-primary.webp"
+            alt="Всё рядом"
+            width={120}
+            height={80}
+            priority
+          />
         </Link>
-
         <nav className="site-header__nav" aria-label="Основная навигация">
           {navLinks.map((link) => (
             <Link href={link.href} key={link.href}>
@@ -46,40 +42,29 @@ export function Header({
             </Link>
           ))}
         </nav>
-
-        <Link className="site-header__cta site-header__cta--desktop" href={ctaHref}>
+        <Link
+          className="button button--primary site-header__cta"
+          href={ctaHref}
+        >
           {ctaLabel}
+          <span aria-hidden="true">↗</span>
         </Link>
-
-        <div className="site-header__mobile-menu">
-          <input
-            className="site-header__menu-toggle"
-            type="checkbox"
-            id="site-header-menu"
-            aria-label="Открыть меню"
-            aria-controls="site-header-mobile-panel"
-          />
-          <label className="site-header__burger" htmlFor="site-header-menu">
-            <span className="site-header__burger-lines" aria-hidden="true" />
-          </label>
-
-          <div className="site-header__mobile-panel" id="site-header-mobile-panel">
-            <nav
-              className="site-header__mobile-nav"
-              aria-label="Мобильная навигация"
-            >
-              {navLinks.map((link) => (
-                <Link href={link.href} key={link.href}>
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            <Link className="site-header__cta site-header__cta--menu" href={ctaHref}>
+        <details className="site-header__mobile-menu">
+          <summary aria-label="Меню сайта">
+            <span />
+            <span />
+          </summary>
+          <nav aria-label="Мобильная навигация">
+            {navLinks.map((link) => (
+              <Link href={link.href} key={link.href}>
+                {link.label}
+              </Link>
+            ))}
+            <Link className="button button--primary" href={ctaHref}>
               {ctaLabel}
             </Link>
-          </div>
-        </div>
+          </nav>
+        </details>
       </div>
     </header>
   );

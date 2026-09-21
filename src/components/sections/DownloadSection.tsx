@@ -1,27 +1,34 @@
 import { DownloadPhone } from "@/components/sections/DownloadPhone";
-import { AppStoreButtons } from "@/components/ui/AppStoreButtons";
+import { AppLaunchNotice } from "@/components/ui/AppLaunchNotice";
 
 export function DownloadSection() {
   return (
-    <section className="download-app" id="download" aria-labelledby="download-title">
-      <div className="download-app__inner">
-        <div className="download-app__visual" aria-hidden="true">
+    <section
+      className="section download-app"
+      id="download"
+      aria-labelledby="download-title"
+    >
+      <div className="container split-layout">
+        <div className="download-app__visual">
           <DownloadPhone />
         </div>
-
-        <div className="download-app__content" data-reveal="right">
-          <p className="download-app__eyebrow">Приложение Sosedi</p>
-          <h2 id="download-title">Скачайте и найдите нужное рядом</h2>
-          <p className="download-app__text">
-            Откройте карту района, договоритесь с соседями и забронируйте вещь
-            за пару минут.
+        <div className="section-copy">
+          <AppLaunchNotice />
+          <h2 id="download-title">
+            Ближе,
+            <br />
+            чем кажется.
+          </h2>
+          <p className="lead">
+            Вещи, люди и возможности твоего района — в одном приложении.
           </p>
-          <div
-            className="download-app__stores"
-            aria-label="Ссылки для скачивания приложения"
-          >
-            <AppStoreButtons />
-          </div>
+          <p>
+            Мы готовим «Всё рядом» к запуску. Здесь появятся дата выхода и
+            ссылки для скачивания.
+          </p>
+          <p className="handwritten download-app__signature">
+            А пока — строй планы!
+          </p>
         </div>
       </div>
     </section>

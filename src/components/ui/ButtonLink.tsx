@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 type ButtonLinkProps = {
   children: ReactNode;
   href: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "contrast";
 };
 
 export function ButtonLink({

@@ -1,0 +1,172 @@
+[
+  {
+    "width": 305,
+    "pageWidth": 305,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/",
+    "viewport": 320,
+    "errors": []
+  },
+  {
+    "width": 375,
+    "pageWidth": 375,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/",
+    "viewport": 390,
+    "errors": []
+  },
+  {
+    "width": 753,
+    "pageWidth": 753,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/",
+    "viewport": 768,
+    "errors": []
+  },
+  {
+    "width": 1009,
+    "pageWidth": 1009,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/",
+    "viewport": 1024,
+    "errors": []
+  },
+  {
+    "width": 1425,
+    "pageWidth": 1425,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/",
+    "viewport": 1440,
+    "errors": []
+  },
+  {
+    "width": 305,
+    "pageWidth": 305,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/business",
+    "viewport": 320,
+    "errors": []
+  },
+  {
+    "width": 375,
+    "pageWidth": 375,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/business",
+    "viewport": 390,
+    "errors": []
+  },
+  {
+    "width": 753,
+    "pageWidth": 753,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/business",
+    "viewport": 768,
+    "errors": []
+  },
+  {
+    "width": 1009,
+    "pageWidth": 1009,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/business",
+    "viewport": 1024,
+    "errors": []
+  },
+  {
+    "width": 1425,
+    "pageWidth": 1425,
+    "h1": 1,
+    "description": true,
+    "og": true,
+    "badImages": [],
+    "fonts": [
+      "Montserrat",
+      "Montserrat",
+      "Caveat",
+      "Caveat"
+    ],
+    "route": "/business",
+    "viewport": 1440,
+    "errors": []
+  }
+]

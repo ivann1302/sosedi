@@ -12,7 +12,10 @@ export function StatsSection() {
           {benefits.map((item, index) => (
             <li key={item.title}>
               <span className="benefits-strip__number" aria-hidden="true">
-                0{index + 1}
+                {index + 1}
+                <svg viewBox="0 0 64 22" focusable="false">
+                  <path d="M6 6C19 20 44 20 58 5" />
+                </svg>
               </span>
               <div>
                 <h2>{item.title}</h2>

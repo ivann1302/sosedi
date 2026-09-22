@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { BrandIcon } from "@/components/ui/BrandIcon";
 
 export function MapSection() {
   return (
@@ -66,18 +67,19 @@ export function MapSection() {
               stroke="#D5B800"
               strokeDasharray="5 8"
             />
-            <g fill="#FFD400" stroke="#FFF" strokeWidth="5">
-              <path d="M140 135a24 24 0 1 0-48 0c0 22 24 43 24 43s24-21 24-43Z" />
-              <path d="M512 353a24 24 0 1 0-48 0c0 22 24 43 24 43s24-21 24-43Z" />
-              <path d="M280 470a24 24 0 1 0-48 0c0 22 24 43 24 43s24-21 24-43Z" />
-            </g>
-            <g fill="#111">
-              <circle cx="116" cy="134" r="7" />
-              <circle cx="488" cy="352" r="7" />
-              <circle cx="256" cy="469" r="7" />
-              <path d="M338 186a32 32 0 1 0-64 0c0 29 32 55 32 55s32-26 32-55Z" />
-            </g>
-            <circle cx="306" cy="184" r="10" fill="#FFF" />
+            {[
+              { x: 116, y: 150, scale: 1 },
+              { x: 488, y: 368, scale: 1 },
+              { x: 256, y: 485, scale: 1 },
+              { x: 306, y: 199, scale: 1.3 },
+            ].map((pin) => (
+              <g key={pin.x} transform={`translate(${pin.x} ${pin.y}) scale(${pin.scale})`}>
+                <rect x="-28" y="-28" width="56" height="56" rx="14" fill="#FFD400" />
+                <g transform="translate(-16 -16)" color="#111111">
+                  <BrandIcon name="pin" />
+                </g>
+              </g>
+            ))}
           </svg>
           <figcaption>
             Вещи ближе, чем кажется. Иллюстрация будущего поиска.

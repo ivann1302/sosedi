@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrandIcon } from "@/components/ui/BrandIcon";
 import drillImage from "@/assets/images/things-around/drel.webp";
 import tentImage from "@/assets/images/things-around/tent.webp";
 
@@ -20,7 +21,7 @@ export function DownloadPhone() {
           <strong>для твоих планов?</strong>
         </p>
         <div className="phone-concept__search">
-          ⌕ <span>Найти вещь рядом</span>
+          <BrandIcon name="search" /> <span>Найти вещь рядом</span>
         </div>
         <div className="phone-concept__categories">
           <span>Для дома</span>

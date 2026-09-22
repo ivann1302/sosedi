@@ -1,23 +1,25 @@
+import { BrandIcon } from "@/components/ui/BrandIcon";
+
 const steps = [
   {
     number: "01",
     title: "Найди",
     text: "Выбери нужную вещь и договорись с владельцем об условиях.",
-    symbol: "⌕",
+    symbol: "search",
   },
   {
     number: "02",
     title: "Используй",
     text: "Забери вещь в удобном месте и воплоти свои планы.",
-    symbol: "✳",
+    symbol: "box",
   },
   {
     number: "03",
     title: "Верни",
     text: "Верни вещь вовремя — теперь она пригодится кому-то ещё.",
-    symbol: "↗",
+    symbol: "cycle",
   },
-];
+] as const;
 
 export function HowItWorksSection() {
   return (
@@ -48,7 +50,7 @@ export function HowItWorksSection() {
               <div className="steps__top">
                 <span>{step.number}</span>
                 <span className="steps__symbol" aria-hidden="true">
-                  {step.symbol}
+                  <BrandIcon name={step.symbol} />
                 </span>
               </div>
               <h3>{step.title}</h3>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrandIcon } from "@/components/ui/BrandIcon";
 import sharingImage from "@/assets/images/brand/neighbors-sharing-v2.webp";
 
 const principles = [
@@ -44,7 +45,7 @@ export function TrustSection() {
           <ul className="principles">
             {principles.map((item) => (
               <li key={item.title}>
-                <span aria-hidden="true">✓</span>
+                <span aria-hidden="true"><BrandIcon name="check" /></span>
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>

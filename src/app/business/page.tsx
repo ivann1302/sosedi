@@ -5,6 +5,7 @@ import drillImage from "@/assets/images/things-around/drel.webp";
 import { Header } from "@/components/sections/Header";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { BrandIcon } from "@/components/ui/BrandIcon";
 
 export const metadata: Metadata = {
   title: "Для локального бизнеса — Всё рядом",
@@ -240,9 +241,9 @@ export default function BusinessPage() {
                 Покажите, для каких задач подходит ваш ассортимент.
               </p>
               <ul className="simple-list">
-                <li>Фотографии и описание вещи</li>
-                <li>Понятные условия аренды</li>
-                <li>Удобное место передачи</li>
+                <li><BrandIcon name="check" />Фотографии и описание вещи</li>
+                <li><BrandIcon name="check" />Понятные условия аренды</li>
+                <li><BrandIcon name="check" />Удобное место передачи</li>
               </ul>
               <p>Детали размещения согласуем перед запуском.</p>
             </div>

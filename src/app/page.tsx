@@ -6,18 +6,25 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { MapSection } from "@/components/sections/MapSection";
-import { StatsSection } from "@/components/sections/StatsSection";
 import { ThingsAroundSection } from "@/components/sections/ThingsAroundSection";
 import { TrustSection } from "@/components/sections/TrustSection";
 
 export default function Home() {
   return (
-    <div className="page">
-      <Header />
+    <div className="page page--home">
+      <Header
+        appearance="home"
+        ctaLabel="Скачать приложение"
+        navLinks={[
+          { label: "Каталог", href: "/#things" },
+          { label: "Как это работает", href: "/#how-it-works" },
+          { label: "Для бизнеса", href: "/business" },
+          { label: "О нас", href: "/#trust" },
+        ]}
+      />
 
       <main id="main-content">
         <HeroSection />
-        <StatsSection />
         <ThingsAroundSection />
         <HowItWorksSection />
         <TrustSection />

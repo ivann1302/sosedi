@@ -4,38 +4,39 @@ import tentImage from "@/assets/images/things-around/tent.webp";
 import vacuumImage from "@/assets/images/things-around/vcleaner.webp";
 import projectorImage from "@/assets/images/things-around/proector.webp";
 import bicycleImage from "@/assets/images/things-around/bycicle.webp";
-import vrImage from "@/assets/images/things-around/vr.webp";
+import clothingImage from "@/assets/images/brand/hero-neighbor-v2.webp";
 
 const categories = [
   {
-    title: "Для ремонта",
-    text: "Повесить полку. Собрать мечту.",
+    title: "Инструменты",
     image: drillImage,
+    alt: "Аккумуляторная дрель",
   },
   {
-    title: "Для приключений",
-    text: "Уехать за город налегке.",
+    title: "Туризм",
     image: tentImage,
+    alt: "Туристическая палатка",
   },
   {
     title: "Для дома",
-    text: "Навести порядок без лишних покупок.",
     image: vacuumImage,
+    alt: "Пылесос для дома",
   },
   {
-    title: "Для впечатлений",
-    text: "Устроить кино у себя дома.",
-    image: projectorImage,
-  },
-  {
-    title: "Для движения",
-    text: "Открыть любимый город заново.",
+    title: "Спорт",
     image: bicycleImage,
+    alt: "Городской велосипед",
   },
   {
-    title: "Для новых открытий",
-    text: "Попробовать то, что давно хотелось.",
-    image: vrImage,
+    title: "Фото и электроника",
+    image: projectorImage,
+    alt: "Домашний проектор",
+  },
+  {
+    title: "Одежда",
+    image: clothingImage,
+    alt: "Повседневная одежда для прогулки",
+    cover: true,
   },
 ];
 
@@ -49,37 +50,28 @@ export function ThingsAroundSection() {
       <div className="container">
         <div className="section-heading">
           <h2 id="things-title">
-            Что можно
-            <br />
-            найти рядом?
+            Что можно найти рядом?
           </h2>
           <p>
-            От дрели на один вечер
-            <br />
-            до палатки на целую неделю.
+            От дрели на один вечер до палатки на целую неделю.
           </p>
         </div>
         <ul className="category-grid">
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <li className="category" key={category.title}>
-              <div className="category__image">
-                <span className="category__number" aria-hidden="true">
-                  0{index + 1}
-                </span>
+              <div
+                className={`category__image${category.cover ? " category__image--cover" : ""}`}
+              >
                 <Image
                   src={category.image}
-                  alt=""
+                  alt={category.alt}
                   sizes="(min-width: 1024px) 30vw, 45vw"
                 />
               </div>
               <h3>{category.title}</h3>
-              <p>{category.text}</p>
             </li>
           ))}
         </ul>
-        <p className="section-footnote">
-          Примеры вещей для аренды. Каталог появится после запуска приложения.
-        </p>
       </div>
     </section>
   );

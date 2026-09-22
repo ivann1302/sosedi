@@ -515,6 +515,112 @@ figcaption {
   color: var(--text-secondary);
 }
 
+.rental-benefits {
+  background: var(--brand-yellow);
+  color: var(--brand-black);
+}
+.rental-benefits h2 {
+  max-width: 1000px;
+  text-wrap: initial;
+}
+.rental-benefits__intro {
+  display: grid;
+  align-items: center;
+  gap: 32px;
+}
+.rental-benefits__intro > div {
+  min-width: 0;
+}
+.rental-benefits__visual {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  margin-inline: auto;
+}
+.rental-benefits__visual img {
+  width: 100%;
+  height: auto;
+}
+.rental-benefits__visual svg {
+  position: absolute;
+  width: 16%;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.rental-benefits__rays {
+  left: 0;
+  top: 24%;
+}
+.rental-benefits__arrow {
+  right: 0;
+  top: 47%;
+}
+@media (min-width: 1024px) {
+  .rental-benefits__intro {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+    gap: 48px;
+  }
+  .rental-benefits__visual {
+    max-width: 420px;
+  }
+}
+.rental-benefits__lead {
+  max-width: 520px;
+  margin-top: 24px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.rental-benefits__list {
+  display: grid;
+  gap: 32px;
+  margin-top: 56px;
+}
+.rental-benefits__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.rental-benefits__list h3 {
+  font-weight: 700;
+}
+.rental-benefits__list p {
+  max-width: 260px;
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.rental-benefits__signature {
+  margin-top: 40px;
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .rental-benefits__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    margin-top: 80px;
+  }
+  .rental-benefits__list h3 {
+    font-size: 30px;
+  }
+  .rental-benefits__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+  }
+  .rental-benefits__lead {
+    margin-top: 32px;
+    font-size: 24px;
+  }
+  .rental-benefits__signature {
+    margin-top: 56px;
+    font-size: 42px;
+  }
+}
+
 /* 04 — Categories */
 .things-around {
   background: var(--surface);
@@ -531,22 +637,11 @@ figcaption {
   position: relative;
   display: grid;
   place-items: center;
-  background: #f3e7b6;
+  background: var(--brand-cream);
   border-radius: 24px;
   padding: 18px;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-}
-.category:nth-child(2) .category__image,
-.category:nth-child(5) .category__image {
-  background: #ece9df;
-}
-.category:nth-child(3) .category__image,
-.category:nth-child(4) .category__image {
-  background: #f7d443;
-}
-.category:nth-child(6) .category__image {
-  background: #e7e4db;
 }
 .category__image img {
   width: 100%;
@@ -569,48 +664,138 @@ figcaption {
 }
 
 /* 05 — How it works */
-.how-it-works {
-  background: white;
+.section.how-it-works {
+  background: var(--surface);
+  padding-block: 72px;
+}
+.how-it-works__heading {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.how-it-works__label {
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 999px;
+  background: #fff0b8;
+  font-size: 16px;
+  font-weight: 600;
+}
+.how-it-works__heading h2 {
+  position: relative;
+  width: fit-content;
+  margin: 24px auto 0;
+  max-width: 1160px;
+}
+.how-it-works__rays {
+  display: none;
+  fill: none;
+  stroke: var(--brand-yellow);
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+.how-it-works__lead {
+  max-width: 1160px;
+  margin: 24px auto 0;
+  font-size: 18px;
+  line-height: 1.5;
 }
 .steps {
   display: grid;
-  gap: 32px;
+  gap: 36px;
 }
 .steps li {
-  border-top: 1px solid var(--border);
-  padding-top: 28px;
+  position: relative;
+  min-width: 0;
+  text-align: center;
 }
-.steps__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 28px;
+.steps__visual {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  aspect-ratio: 522 / 395;
+  margin-inline: auto;
+  overflow: hidden;
+  // Viewports onto the three illustrations in the 1672 × 941 reference.
+  // Source rectangles start at x = 0 / 575 / 1150, y = 345.
 }
-.steps__top > span:first-child {
-  color: #6a6557;
-  font-size: 13px;
+.steps__visual img {
+  position: absolute;
+  width: 320.306514%;
+  max-width: none;
+  height: auto;
+  top: -87.341772%;
+  left: 0;
 }
-.steps__symbol {
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  background: var(--brand-yellow);
-  border-radius: 25%;
-  color: var(--brand-black);
+.steps__visual--02 img {
+  left: -110.153257%;
 }
-.steps__symbol svg {
-  width: 62.5%;
-  height: 62.5%;
+.steps__visual--03 img {
+  left: -220.306514%;
 }
 .steps h3 {
-  font-size: 30px;
+  margin-top: 20px;
+  font-size: 28px;
+  line-height: 1.15;
 }
 .steps li > p {
-  margin-top: 14px;
-  max-width: 340px;
+  margin: 14px auto 0;
+  max-width: 380px;
   color: var(--text-secondary);
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.how-it-works__note {
+  margin-top: 28px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+@media (min-width: 1024px) {
+  .section.how-it-works {
+    padding-block: 96px;
+  }
+  .how-it-works__heading {
+    margin-bottom: 40px;
+  }
+  .how-it-works__heading h2 {
+    font-size: 52px;
+    max-width: calc(100% - 80px);
+  }
+  .how-it-works__label {
+    font-size: 18px;
+  }
+  .how-it-works__lead {
+    font-size: 22px;
+  }
+  .how-it-works__rays {
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    right: -66px;
+    top: -20px;
+  }
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+  .steps li:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 42%;
+    right: -34px;
+    color: #85837d;
+    font-size: 42px;
+    line-height: 1;
+  }
+}
+@media (min-width: 1280px) {
+  .how-it-works__heading h2 {
+    font-size: 64px;
+  }
+  .steps h3 {
+    font-size: 32px;
+  }
 }
 
 /* 06 — Trust */
@@ -1231,16 +1416,6 @@ figcaption {
   .section-heading > .handwritten {
     font-size: 36px;
   }
-  .steps {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-  }
-  .steps h3 {
-    font-size: 27px;
-  }
-  .steps li > p {
-    font-size: 14px;
-  }
   .app-thesis p {
     font-size: 52px;
   }
@@ -1366,19 +1541,6 @@ figcaption {
   }
   .category p {
     font-size: 14px;
-  }
-  .steps {
-    gap: 48px;
-  }
-  .steps__symbol {
-    width: 80px;
-    height: 80px;
-  }
-  .steps h3 {
-    font-size: 34px;
-  }
-  .steps li > p {
-    font-size: 16px;
   }
   .split-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));

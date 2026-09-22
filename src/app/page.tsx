@@ -6,6 +6,7 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { MapSection } from "@/components/sections/MapSection";
+import { RentalBenefitsSection } from "@/components/sections/RentalBenefitsSection";
 import { ThingsAroundSection } from "@/components/sections/ThingsAroundSection";
 import { TrustSection } from "@/components/sections/TrustSection";
 
@@ -25,6 +26,7 @@ export default function Home() {
 
       <main id="main-content">
         <HeroSection />
+        <RentalBenefitsSection />
         <ThingsAroundSection />
         <HowItWorksSection />
         <TrustSection />

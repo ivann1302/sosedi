@@ -1,26 +1,24 @@
 import { Header } from "@/components/sections/Header";
 import { BusinessTermsSection } from "@/components/sections/BusinessTermsSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { DownloadSection } from "@/components/sections/DownloadSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { MapSection } from "@/components/sections/MapSection";
+import { JoinSection } from "@/components/sections/JoinSection";
 import { RentalBenefitsSection } from "@/components/sections/RentalBenefitsSection";
 import { ThingsAroundSection } from "@/components/sections/ThingsAroundSection";
-import { TrustSection } from "@/components/sections/TrustSection";
 
 export default function Home() {
   return (
     <div className="page page--home">
       <Header
         appearance="home"
-        ctaLabel="Скачать приложение"
+        ctaHref="/#join"
+        ctaLabel="Присоединиться"
         navLinks={[
           { label: "Каталог", href: "/#things" },
           { label: "Как это работает", href: "/#how-it-works" },
           { label: "Для бизнеса", href: "/business" },
-          { label: "О нас", href: "/#trust" },
         ]}
       />
 
@@ -29,7 +27,7 @@ export default function Home() {
         <RentalBenefitsSection />
         <ThingsAroundSection />
         <HowItWorksSection />
-        <TrustSection />
+        <JoinSection />
         <section
           className="app-thesis"
           aria-label="Идея совместного использования"
@@ -45,8 +43,6 @@ export default function Home() {
             </span>
           </div>
         </section>
-        <MapSection />
-        <DownloadSection />
         <BusinessTermsSection />
         <FaqSection />
       </main>

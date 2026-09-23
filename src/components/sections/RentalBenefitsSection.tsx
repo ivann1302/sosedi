@@ -1,17 +1,6 @@
-import type { ComponentProps } from "react";
 import Image from "next/image";
 import { BrandIcon } from "@/components/ui/BrandIcon";
 import rentalTote from "@/assets/images/brand/rental-tote.webp";
-
-const benefits: {
-  title: string;
-  text: string;
-  icon: ComponentProps<typeof BrandIcon>["name"];
-}[] = [
-  { title: "Ближе", text: "Нужное может быть рядом.", icon: "pin" },
-  { title: "Выгоднее", text: "Плати за использование.", icon: "coins" },
-  { title: "Разумнее", text: "Хорошие вещи должны работать.", icon: "cycle" },
-];
 
 export function RentalBenefitsSection() {
   return (
@@ -19,12 +8,12 @@ export function RentalBenefitsSection() {
       <div className="container">
         <div className="rental-benefits__intro">
           <div>
-        <h2 id="rental-benefits-title">
-          Нужная вещь может быть ближе, чем кажется.
-        </h2>
-        <p className="rental-benefits__lead">
-          Не покупай то, что понадобится всего на пару дней.
-        </p>
+            <h2 id="rental-benefits-title">
+              Нужная вещь может быть ближе, чем кажется.
+            </h2>
+            <p className="rental-benefits__lead">
+              Не покупай то, что понадобится всего на пару дней.
+            </p>
           </div>
           <div className="rental-benefits__visual">
             <Image
@@ -40,18 +29,19 @@ export function RentalBenefitsSection() {
             </svg>
           </div>
         </div>
-        <ul className="rental-benefits__list">
-          {benefits.map((benefit) => (
-            <li key={benefit.title}>
-              <BrandIcon name={benefit.icon} className="rental-benefits__icon" />
-              <h3>{benefit.title}</h3>
-              <p>{benefit.text}</p>
-            </li>
-          ))}
-        </ul>
-        <p className="handwritten rental-benefits__signature">
-          ~ всё рядом <span aria-hidden="true">♡</span>
-        </p>
+        <div className="rental-benefits__paths">
+          <div className="rental-benefits__path">
+            <h3>Арендуй вещь</h3>
+            <p>Найди нужную вещь рядом и возьми её на подходящий срок.</p>
+          </div>
+          <div className="rental-benefits__exchange" aria-hidden="true">
+            <BrandIcon name="cycle" />
+          </div>
+          <div className="rental-benefits__path">
+            <h3>Сдай в аренду</h3>
+            <p>Добавь свою вещь, укажи условия и сдавай людям поблизости.</p>
+          </div>
+        </div>
       </div>
     </section>
   );

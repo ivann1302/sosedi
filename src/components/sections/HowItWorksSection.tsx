@@ -1,21 +1,27 @@
 import Image from "next/image";
-import stepsReference from "@/assets/images/how-it-works/steps-reference.png";
+import headingSticker from "@/assets/images/how-it-works/how-it-works-heading-sticker.webp";
+import findItemImage from "@/assets/images/how-it-works/generated/find-item.webp";
+import bookItemImage from "@/assets/images/how-it-works/generated/book-item.webp";
+import returnItemImage from "@/assets/images/how-it-works/generated/return-item.webp";
 
 const steps = [
   {
     number: "01",
     title: "Найди вещь",
     text: "Выбери то, что нужно, в каталоге.",
+    image: findItemImage,
   },
   {
     number: "02",
     title: "Забронируй",
     text: "Согласуй время и получение.",
+    image: bookItemImage,
   },
   {
     number: "03",
     title: "Верни владельцу",
     text: "После использования просто верни вещь.",
+    image: returnItemImage,
   },
 ];
 
@@ -28,7 +34,14 @@ export function HowItWorksSection() {
     >
       <div className="container">
         <div className="how-it-works__heading">
-          <p className="how-it-works__label">Как это работает</p>
+          <div className="how-it-works__label-sticker">
+            <Image
+              src={headingSticker}
+              alt=""
+              sizes="(min-width: 1024px) 220px, 180px"
+            />
+            <p className="visually-hidden">Как это работает</p>
+          </div>
           <h2 id="steps-title">
             Взял. Использовал. Вернул.
             <svg className="how-it-works__rays" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
@@ -42,11 +55,12 @@ export function HowItWorksSection() {
         <ol className="steps" role="list">
           {steps.map((step) => (
             <li key={step.number}>
-              <div className={`steps__visual steps__visual--${step.number}`} aria-hidden="true">
+              <div className="steps__visual" aria-hidden="true">
+                <span className="steps__number">{step.number}</span>
                 <Image
-                  src={stepsReference}
+                  src={step.image}
                   alt=""
-                  sizes="(min-width: 1440px) 1400px, (min-width: 1024px) 100vw, 1400px"
+                  sizes="(min-width: 1024px) 30vw, 90vw"
                 />
               </div>
               <h3>{step.title}</h3>
@@ -54,7 +68,6 @@ export function HowItWorksSection() {
             </li>
           ))}
         </ol>
-        <p className="how-it-works__note">Иллюстрация будущего сервиса. Приложение готовится к запуску.</p>
       </div>
     </section>
   );

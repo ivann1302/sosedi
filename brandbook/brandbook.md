@@ -155,11 +155,13 @@ Gray 700
 
 Основной шрифт:
 
-**Montserrat Rounded**
+**Nunito**
 
 Начертания:
-- Bold
 - ExtraBold
+- Black
+
+Пользователь уточнил выбор 23 сентября 2026 года по референсу «Зачем покупать, если можно взять рядом?». Для крупных заголовков использовать Nunito Black `900`: его округлая кириллица и плотность соответствуют выбранному визуалу. Для более мелких `h3` допустим Nunito ExtraBold `800`.
 
 Использование:
 - Hero H1;
@@ -236,16 +238,16 @@ Arial, sans-serif
 
 Hero H1
 
-font-family: Montserrat Rounded;
-font-weight: 800;
+font-family: Nunito;
+font-weight: 900;
 font-size: 72–88px;
 line-height: 0.95–1.05;
 letter-spacing: -0.03em;
 
 Section H2
 
-font-family: Montserrat Rounded;
-font-weight: 800;
+font-family: Nunito;
+font-weight: 900;
 font-size: 52–68px;
 line-height: 1.0–1.08;
 letter-spacing: -0.025em;
@@ -253,7 +255,8 @@ letter-spacing: -0.025em;
 H3
 
 font-size: 28–36px;
-font-weight: 700;
+font-family: Nunito;
+font-weight: 800;
 
 Lead text
 
@@ -840,6 +843,7 @@ product-oriented;
 
 [ App Store ]
 [ Google Play ]
+[ RuStore ]
 
 + один или максимум два mockup телефона.
 
@@ -952,6 +956,8 @@ BOTTOM:
 Очень много воздуха.
 
 Footer не должен выглядеть как sitemap из 40 ссылок.
+
+На мобильном футер центрирован и выстроен вертикально. До публикации приложения store-кнопки показывают статус «Скоро в» и не ведут на фиктивные страницы магазинов.
 
 ---
 

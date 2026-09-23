@@ -19,8 +19,8 @@ const defaultNavLinks = [
 
 export function Header({
   navLinks = defaultNavLinks,
-  ctaHref = "/#download",
-  ctaLabel = "Скоро запуск",
+  ctaHref = "/#join",
+  ctaLabel = "Присоединиться",
   appearance = "default",
 }: HeaderProps) {
   return (
@@ -47,7 +47,7 @@ export function Header({
           ))}
         </nav>
         {appearance === "home" && (
-          <Link className="button site-header__about-launch" href="/#download">
+          <Link className="button site-header__about-launch" href="/#join">
             Узнать о запуске
           </Link>
         )}

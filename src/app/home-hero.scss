@@ -29,7 +29,7 @@
 }
 .home-hero h1 {
   font-size: 34px;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1.06;
   letter-spacing: -0.045em;
   text-wrap: initial;
@@ -59,6 +59,12 @@
   font-size: 15px;
   line-height: 1.5;
   color: #565963;
+}
+.home-hero__description-accent {
+  font-family: "Nunito", "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.012em;
+  color: var(--brand-black);
 }
 .home-hero__benefits {
   display: grid;
@@ -101,6 +107,9 @@
   min-height: 240px;
   overflow: hidden;
 }
+.home-hero__visual-points {
+  display: none;
+}
 /* Clip the photograph from the supplied composition without rasterising HTML text. */
 .home-hero__image-frame {
   position: absolute;
@@ -119,6 +128,107 @@
   height: auto;
   right: 0;
   top: -14.5414%;
+}
+@media (max-width: 639px) {
+  .home-hero {
+    min-height: 0;
+    padding: 28px 0 44px;
+  }
+  .home-hero__content {
+    display: contents;
+    text-align: center;
+  }
+  .home-hero h1 {
+    position: relative;
+    z-index: 1;
+    order: 1;
+    width: calc(100% - 40px);
+    max-width: 350px;
+    margin-inline: auto;
+    text-align: left;
+  }
+  .home-hero__last-line {
+    margin-inline: 0;
+  }
+  .home-hero__visual {
+    display: block;
+    order: 2;
+    flex: none;
+    width: 100%;
+    height: clamp(430px, 123vw, 500px);
+    min-height: 0;
+    margin: -48px 0 0;
+    overflow: visible;
+  }
+  .home-hero__visual-points {
+    position: absolute;
+    z-index: 2;
+    top: 38%;
+    left: 20px;
+    display: grid;
+    max-width: 124px;
+    gap: 14px;
+    font-family: "Nunito", "Montserrat", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.05;
+    text-align: left;
+  }
+  .home-hero__visual-points li {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    align-items: center;
+    gap: 8px;
+  }
+  .home-hero__visual-points li::before {
+    content: "";
+    width: 18px;
+    height: 5px;
+    border-radius: 999px;
+    background: var(--brand-yellow);
+    transform: rotate(-5deg);
+  }
+  .home-hero__visual::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 8%;
+    right: 4%;
+    width: 75%;
+    height: 78%;
+    border-radius: 48% 52% 43% 57% / 38% 44% 56% 62%;
+    background: #f6ecd2;
+    transform: rotate(-6deg);
+  }
+  .home-hero__image-frame {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    overflow: visible;
+    mask-image: none;
+  }
+  .home-hero__image-frame img {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right center;
+  }
+  .home-hero__description {
+    position: relative;
+    z-index: 1;
+    order: 3;
+    max-width: 340px;
+    margin: 28px auto 0;
+    padding-inline: 20px;
+  }
+  .home-hero__benefits {
+    display: none;
+  }
+  .home-hero__icon {
+    margin-inline: auto;
+  }
 }
 @media (min-width: 640px) {
   .home-hero__content {
@@ -212,6 +322,10 @@
 @media (max-width: 359px) {
   .home-hero h1 {
     font-size: 30px;
+  }
+  .home-hero__visual-points {
+    max-width: 112px;
+    font-size: 15px;
   }
   .home-hero__description {
     font-size: 14px;

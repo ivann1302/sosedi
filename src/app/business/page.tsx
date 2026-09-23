@@ -261,7 +261,7 @@ export default function BusinessPage() {
                 <details key={item.question}>
                   <summary>
                     {item.question}
-                    <span aria-hidden="true" />
+                    <span className="faq__toggle" aria-hidden="true" />
                   </summary>
                   <p>{item.answer}</p>
                 </details>
